@@ -1,0 +1,10 @@
+thead.my-table.headers tr th {
+    width: 100px;
+    border: black solid 2px;
+    height: 25px;
+  }
+  tbody.my-table.body tr td {
+    width: 100px;
+    border: black solid 1px;
+    height: 25px;
+  }

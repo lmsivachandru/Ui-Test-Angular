@@ -1,0 +1,31 @@
+<div>
+  <table>
+    <thead class="my-table headers">
+    <tr>
+    <th>Name</th>
+    <th>Capital</th>
+    <th>Population</th>
+    <th>Currencies</th>
+    <th>Flag</th>
+    </tr>
+    </thead>
+    <tbody class="my-table body">
+     <tr *ngFor="let row of countryDetails">
+      <td>{{row.name}}</td>
+      <td>{{row.capital}}</td>
+      <td>{{row.population}}</td>
+      <td>
+        <ul>
+        <li *ngFor="let currency of row.currencies">
+          {{currency.name}}
+        </li>
+        </ul>
+      </td>
+      <td><img src="{{row.flag}}" alt="flag" width="100" height="100"></td>
+     </tr>
+     <tr *ngIf="countryDetails.length==0">
+        No data found
+     </tr>
+    </tbody>
+  </table>
+</div>

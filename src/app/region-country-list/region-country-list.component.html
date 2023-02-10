@@ -1,0 +1,21 @@
+<div class="drop-downs">
+    <div style="padding:30px;">
+	<h6 style="font-weight:bold">Select a Region</h6>
+	<select [(ngModel)]="selectedRegion" (ngModelChange)="onChange($event)" class="selection-css">
+    <option disabled value="">Select</option>
+      <option *ngFor="let item of regionList$ | async ;let i = index" [ngValue]="item.regCode">
+        {{item.name}}
+      </option>
+    </select>
+    </div>
+    <div style="padding:30px;">
+    <h6 style="font-weight:bold">Select a Country</h6>
+	<select [(ngModel)]="selectedCountry" (ngModelChange)="selectCountry($event)" class="selection-css">
+    <option disabled value="">Select</option>
+      <option *ngFor="let item of countryList$ | async;let i = index" [ngValue]="item.alpha2Code">
+        {{item.name}}
+      </option>
+    </select>
+    </div>
+</div>
+<app-country-list-details [countryDetails]="countryDetailsData"></app-country-list-details>
